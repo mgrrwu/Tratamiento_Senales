@@ -5,24 +5,25 @@ addpath('../funciones', '../imagenes');
 
 
 %cargar la imagen
-%I=imread('oclusion.bmp');
-I=imread('lena.bmp');
+I=imread('oclusion.bmp');
+%I=imread('lena.bmp');
 % mostrar la original
 %figure
 %imshow(I);
 
 %% EJERCICIO 1
-%Li=1; %conjunto de nivel inicial
-%Lf=256;%conjunto de nivel final
-%paso=50;%paso entre niveles
-% 
-% %Encuentro las lineas de nivel
-% L=lineas_de_nivel(I, Li, Lf, paso);
-% 
-% 
-% figure
-% J=flip(I, 'v');%efectuo un flip vertical pues contour da vuelta la imagen
-% [C, h]=contour(J);
+Li=1; %conjunto de nivel inicial
+Lf=256;%conjunto de nivel final
+paso=50;%paso entre niveles
+
+%Encuentro las lineas de nivel
+L=lineas_de_nivel(I, Li, Lf, paso);
+
+plotear(I, negativo(L), 'Lineas de nivel')
+
+figure
+J=flip(I, 'v');%efectuo un flip vertical pues contour da vuelta la imagen
+[C, h]=contour(J);
 
 
 %% EJERCICIO 2
